@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Firetier assets</title>
+<link rel="stylesheet" href="../web/css/tokens.css"><link rel="stylesheet" href="../web/css/components.css">
+<style>
+body{padding:32px;background:var(--bg);overflow:auto}
+h1{font-size:24px;margin-bottom:4px} h2{font-size:15px;margin:28px 0 12px}
+.g{display:grid;gap:16px} .g.t{grid-template-columns:repeat(4,1fr)} .g.i{grid-template-columns:repeat(6,1fr)} .g.p{grid-template-columns:2fr 1fr 1fr}
+figure{margin:0;background:var(--s1);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+figure img{display:block;width:100%;background:var(--s2)} figure.ill img{background:var(--s1);padding:10px}
+figcaption{padding:8px 10px;font-size:12px;color:var(--tx2);display:flex;gap:6px;align-items:center}
+figcaption .badge{margin-left:auto}
+</style></head><body>
+<h1>Firetier visual assets</h1>
+<p class="muted">Two images were generated (ForgeGUI). Everything marked hand-made is SVG written in <span class="mono">design/tools/make_illus.py</span>. The arena image is an illustration, not a Roblox screenshot.</p>
+<h2>Generated</h2>
+<div class="g p">
+  <figure><img src="../web/assets/arena-1280.jpg" alt=""><figcaption>Arena illustration (dashboard / Rivals card) <span class="badge info">generated</span></figcaption></figure>
+  <figure><img src="../web/assets/logo-512.png" alt="" style="padding:24px;background:var(--s1)"><figcaption>App logo <span class="badge info">generated</span></figcaption></figure>
+  <figure><div style="display:flex;gap:18px;align-items:end;justify-content:center;padding:40px 12px;background:var(--s1)"><img src="../web/assets/logo-128.png" alt="" style="width:96px;background:none"><img src="../web/assets/logo-64.png" alt="" style="width:48px;background:none"><img src="../web/assets/logo-64.png" alt="" style="width:24px;background:none"><img src="../web/assets/logo-64.png" alt="" style="width:16px;background:none"></div><figcaption>Logo at 96 / 48 / 24 / 16 px <span class="badge outline">trimmed, resized</span></figcaption></figure>
+</div>
+<h2>Preset and game thumbnails</h2>
+<div class="g t" id="thumbs"></div>
+<h2>Empty, error and onboarding illustrations</h2>
+<div class="g i" id="illus"></div>
+<script src="assets.js"></script>
+</body></html>

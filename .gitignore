@@ -1,0 +1,6 @@
+# build output (releases carry the exe)
+dist/
+
+# Python
+__pycache__/
+*.pyc

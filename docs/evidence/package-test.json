@@ -1,0 +1,19 @@
+{
+  "portable_workflow": "saved edit, rendered preview, restarted, exported and reset preferences",
+  "zip_crc": "passed",
+  "clean_window_close_exit_codes": [
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "launcher_to_window_ms": [
+    2092,
+    1006,
+    838,
+    840,
+    843
+  ],
+  "bundled_python_paths": "['C:\\\\Users\\\\PC\\\\AppData\\\\Local\\\\Temp\\\\firetier-audit-1121\\\\tmpfsqoy10n\\\\Firetier Portable\\\\runtime\\\\Lib', 'C:\\\\Users\\\\PC\\\\AppData\\\\Local\\\\Temp\\\\firetier-audit-1121\\\\tmpfsqoy10n\\\\Firetier Portable\\\\runtime\\\\DLLs', 'C:\\\\Users\\\\PC\\\\AppData\\\\Local\\\\Temp\\\\firetier-audit-1121\\\\tmpfsqoy10n\\\\Firetier Portable']\n8.6"
+}

@@ -1,0 +1,76 @@
+/* Firetier design tokens: "Ember" (concept A). Change values here, never in component CSS. */
+:root {
+  color-scheme: dark;
+
+  /* Surfaces: a ladder, darkest at the back. Elevation = one step lighter, not a shadow. */
+  --bg: #0C0D10;
+  --s1: #131519;
+  --s2: #1A1D22;
+  --s3: #22262C;
+  --s4: #2A2F36;
+  --line: #262A31;
+  --line-strong: #343941;
+  --overlay: rgba(6, 7, 9, .72);
+
+  /* Text */
+  --tx: #ECEDEF;
+  --tx2: #A3A8B0;
+  --tx3: #8A9099;   /* 5.4:1 on --s1, AA for small text */
+  --tx-dis: #5B616A;
+  --on-accent: #1A0C06;
+
+  /* Brand */
+  --ac: #FF6A3D;
+  --ac-hover: #FF8259;
+  --ac-press: #E9582D;
+  --ac-soft: rgba(255, 106, 61, .14);
+  --ac-line: rgba(255, 106, 61, .45);
+  --amber: #FFB547;
+
+  /* Status (text colour / soft background) */
+  --ok: #3DD68C;   --ok-soft: rgba(61, 214, 140, .13);
+  --warn: #F5B544; --warn-soft: rgba(245, 181, 68, .13);
+  --err: #F2555A;  --err-soft: rgba(242, 85, 90, .13);
+  --info: #5AA9FF; --info-soft: rgba(90, 169, 255, .13);
+  --mute-soft: rgba(163, 168, 176, .12);
+
+  /* Focus */
+  --focus: 0 0 0 2px var(--bg), 0 0 0 4px #FF9B7A;
+
+  /* Type */
+  --font: "Segoe UI Variable Text", "Segoe UI", system-ui, sans-serif;
+  --font-display: "Segoe UI Variable Display", "Segoe UI", system-ui, sans-serif;
+  --font-num: Bahnschrift, "Segoe UI Variable Display", sans-serif;
+  --font-mono: "Cascadia Mono", Consolas, monospace;
+  --t-xs: 11px; --t-sm: 12px; --t-md: 13px; --t-base: 14px; --t-lg: 16px;
+  --t-xl: 20px; --t-2xl: 26px; --t-3xl: 34px;
+  --lh: 1.45;
+
+  /* Spacing: 4 px grid */
+  --sp1: 4px; --sp2: 8px; --sp3: 12px; --sp4: 16px; --sp5: 20px; --sp6: 24px; --sp8: 32px; --sp10: 40px;
+
+  /* Radius */
+  --r-sm: 4px; --r-md: 6px; --r-lg: 10px; --r-xl: 14px; --r-pill: 999px;
+
+  /* Shadow: only for things floating above the page */
+  --sh-pop: 0 8px 24px rgba(0, 0, 0, .45), 0 0 0 1px var(--line-strong);
+  --sh-modal: 0 24px 64px rgba(0, 0, 0, .6), 0 0 0 1px var(--line-strong);
+
+  /* Layout */
+  --sidebar-w: 232px;
+  --topbar-h: 56px;
+  --content-max: 1480px;
+
+  /* Motion */
+  --ease: cubic-bezier(.2, .8, .2, 1);
+  --ease-in: cubic-bezier(.4, 0, 1, 1);
+  --d-fast: 120ms; --d-med: 200ms; --d-slow: 320ms;
+}
+
+/* Reduced motion: from Windows ("Animation effects" off) or the in-app setting. */
+@media (prefers-reduced-motion: reduce) {
+  :root:not([data-motion="full"]) { --d-fast: 0ms; --d-med: 0ms; --d-slow: 0ms; }
+}
+:root[data-motion="reduced"] { --d-fast: 0ms; --d-med: 0ms; --d-slow: 0ms; }
+
+:root[data-density="compact"] { --t-base: 13px; --sp4: 12px; --sp5: 16px; --sp6: 20px; }

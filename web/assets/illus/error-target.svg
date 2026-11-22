@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 120" width="160" height="120" role="img"><title>Unreadable settings file</title>
+<ellipse cx="80" cy="106" rx="54" ry="6" fill="#131519"/>
+<path d="M44 18h50l22 22v58a6 6 0 0 1-6 6H44a6 6 0 0 1-6-6V24a6 6 0 0 1 6-6z" fill="#22262C" stroke="#343941"/>
+<path d="M94 18v16a6 6 0 0 0 6 6h16" fill="#2A2F36" stroke="#343941"/>
+<text x="50" y="58" font-family="Cascadia Mono, Consolas, monospace" font-size="13" fill="#8A9099">{ "</text>
+<rect x="50" y="66" width="44" height="4" rx="2" fill="#2A2F36"/>
+<rect x="50" y="76" width="30" height="4" rx="2" fill="#F2555A" fill-opacity=".7"/>
+<circle cx="112" cy="84" r="16" fill="#F2555A"/>
+<path d="M112 76v10" stroke="#fff" stroke-width="3.2" stroke-linecap="round"/><circle cx="112" cy="92" r="2" fill="#fff"/></svg>

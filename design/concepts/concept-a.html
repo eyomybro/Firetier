@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Concept A · Ember</title>
+<style>
+:root{--bg:#0C0D10;--s1:#131519;--s2:#1A1D22;--s3:#22262C;--line:rgba(255,255,255,.07);--line2:rgba(255,255,255,.11);
+--tx:#ECEDEF;--tx2:#A3A8B0;--tx3:#6E747D;--ac:#FF6A3D;--ac2:#FFB547;--acs:rgba(255,106,61,.14);--ok:#3DD68C;--warn:#F5B544;--err:#F2555A;--info:#5AA9FF}
+*{box-sizing:border-box;margin:0}
+body{background:#07080A;color:var(--tx);font:14px/1.45 "Segoe UI Variable Text","Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+svg.ic{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.app{width:1440px;height:900px;display:grid;grid-template-columns:232px 1fr;background:var(--bg);overflow:hidden}
+.side{background:var(--s1);border-right:1px solid var(--line);padding:18px 12px;display:flex;flex-direction:column;gap:2px}
+.brand{display:flex;align-items:center;gap:10px;padding:4px 10px 22px}
+.brand img{width:30px;height:30px;border-radius:8px}
+.brand b{font:600 16px "Segoe UI Variable Display";letter-spacing:.2px}
+.brand small{display:block;color:var(--tx3);font-size:11px;margin-top:-2px}
+.nav{display:flex;align-items:center;gap:12px;height:38px;padding:0 12px;border-radius:8px;color:var(--tx2);position:relative;font-weight:500}
+.nav.on{background:var(--s3);color:var(--tx)}
+.nav.on::before{content:"";position:absolute;left:-12px;top:10px;bottom:10px;width:3px;border-radius:0 3px 3px 0;background:var(--ac)}
+.nav.on svg{color:var(--ac)}
+.sec{color:var(--tx3);font-size:11px;font-weight:600;letter-spacing:.6px;text-transform:uppercase;padding:18px 12px 6px}
+.side .foot{margin-top:auto;border-top:1px solid var(--line);padding:14px 10px 0;display:flex;gap:10px;align-items:center;color:var(--tx2);font-size:12px}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 3px rgba(61,214,140,.15)}
+main{padding:26px 32px;display:flex;flex-direction:column;gap:20px;overflow:hidden}
+.top{display:flex;align-items:center;gap:12px}
+.top h1{font:600 24px/1.2 "Segoe UI Variable Display";letter-spacing:-.2px}
+.top p{color:var(--tx2);margin-top:2px}
+.search{margin-left:auto;display:flex;gap:8px;align-items:center;width:280px;height:36px;padding:0 12px;background:var(--s2);border:1px solid var(--line);border-radius:8px;color:var(--tx3)}
+.kbd{margin-left:auto;font:11px Consolas;border:1px solid var(--line2);border-radius:4px;padding:1px 5px}
+.btn{height:36px;padding:0 14px;border-radius:8px;display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:13px;border:1px solid var(--line2);background:var(--s2);color:var(--tx)}
+.btn.p{background:var(--ac);border-color:transparent;color:#1A0A04}
+.grid{display:grid;grid-template-columns:1.55fr 1fr;gap:20px}
+.card{background:var(--s1);border:1px solid var(--line);border-radius:14px;padding:18px}
+.card h3{font:600 13px "Segoe UI Variable Text";color:var(--tx2);display:flex;align-items:center;gap:8px;margin-bottom:14px}
+.card h3 a{margin-left:auto;color:var(--tx3);font-weight:500}
+.hero{padding:0;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;min-height:236px}
+.hero .img{background:url(../../web/assets/arena-640.jpg) center/cover;position:relative}
+.hero .img::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 40%,var(--s1))}
+.hero .body{padding:22px 24px;display:flex;flex-direction:column;gap:10px}
+.eyebrow{font-size:11px;font-weight:600;color:var(--ac);letter-spacing:.6px;text-transform:uppercase}
+.hero h2{font:600 22px "Segoe UI Variable Display"}
+.badge{display:inline-flex;align-items:center;gap:6px;height:22px;padding:0 8px;border-radius:6px;font-size:12px;font-weight:600}
+.b-ok{background:rgba(61,214,140,.12);color:var(--ok)}.b-warn{background:rgba(245,181,68,.12);color:var(--warn)}.b-info{background:rgba(90,169,255,.12);color:var(--info)}.b-n{background:var(--s3);color:var(--tx2)}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.stat{background:var(--s2);border-radius:10px;padding:12px 14px}
+.stat b{font:600 22px Bahnschrift;display:block}
+.stat span{color:var(--tx3);font-size:12px}
+.list .it{display:flex;align-items:center;gap:12px;padding:10px 0;border-top:1px solid var(--line)}
+.list .it:first-child{border-top:0;padding-top:0}
+.thumb{width:44px;height:30px;border-radius:6px;background:var(--s3);flex:none;background-size:cover;background-position:center}
+.it .t{font-weight:600}.it .s{color:var(--tx3);font-size:12px}
+.it .r{margin-left:auto}
+.qa{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.qa div{background:var(--s2);border:1px solid var(--line);border-radius:10px;padding:12px;display:flex;gap:10px;align-items:center;font-weight:600}
+.qa svg{color:var(--ac)}
+.act .it{gap:10px}
+.act .ic2{width:28px;height:28px;border-radius:8px;display:grid;place-items:center;background:var(--s2);color:var(--tx2)}
+.spec{width:1440px;padding:40px 48px;background:#0A0B0D;display:grid;grid-template-columns:1fr 1fr 1.2fr;gap:36px;border-top:1px solid var(--line)}
+.spec h4{font:600 12px "Segoe UI";letter-spacing:.8px;text-transform:uppercase;color:var(--tx3);margin-bottom:14px}
+.sw{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.sw div{height:56px;border-radius:8px;border:1px solid var(--line);padding:6px;font:10px Consolas;color:rgba(255,255,255,.8);display:flex;align-items:flex-end}
+.ty div{margin-bottom:10px}.ty small{color:var(--tx3);font:11px Consolas;margin-left:8px}
+.cmp{display:flex;flex-direction:column;gap:14px}
+.sw2{width:36px;height:20px;border-radius:10px;background:var(--ac);position:relative}.sw2::after{content:"";position:absolute;right:3px;top:3px;width:14px;height:14px;border-radius:50%;background:#fff}
+.sw2.off{background:var(--s3)}.sw2.off::after{left:3px;right:auto;background:var(--tx2)}
+.inp{height:36px;border:1px solid var(--line2);border-radius:8px;background:var(--s2);display:flex;align-items:center;padding:0 12px;color:var(--tx2);width:240px}
+.inp.f{border-color:var(--ac);box-shadow:0 0 0 3px var(--acs);color:var(--tx)}
+.sl{width:240px;height:4px;border-radius:2px;background:var(--s3);position:relative}.sl i{position:absolute;left:0;top:0;bottom:0;width:62%;background:var(--ac);border-radius:2px}.sl b{position:absolute;left:62%;top:-6px;width:16px;height:16px;margin-left:-8px;border-radius:50%;background:#fff;box-shadow:0 0 0 4px var(--acs)}
+.tag{position:fixed;top:12px;right:12px}
+</style></head><body>
+<div class="app">
+  <aside class="side">
+    <div class="brand"><img src="../../web/assets/logo-64.png" alt=""><div><b>Firetier</b><small>FastFlag profiles</small></div></div>
+    <div class="nav on"><svg class="ic"><use href="../../web/assets/icons.svg#i-home"/></svg>Dashboard</div>
+    <div class="nav"><svg class="ic"><use href="../../web/assets/icons.svg#i-games"/></svg>Games</div>
+    <div class="nav"><svg class="ic"><use href="../../web/assets/icons.svg#i-presets"/></svg>Presets</div>
+    <div class="nav"><svg class="ic"><use href="../../web/assets/icons.svg#i-editor"/></svg>Editor</div>
+    <div class="nav"><svg class="ic"><use href="../../web/assets/icons.svg#i-assets"/></svg>Asset Studio</div>
+    <div class="sec">System</div>
+    <div class="nav"><svg class="ic"><use href="../../web/assets/icons.svg#i-diagnostics"/></svg>Diagnostics</div>
+    <div class="nav"><svg class="ic"><use href="../../web/assets/icons.svg#i-settings"/></svg>Settings</div>
+    <div class="foot"><span class="dot"></span>Fishstrap target · 15 flags</div>
+  </aside>
+  <main>
+    <div class="top"><div><h1>Good evening</h1><p>Your Rivals setup is applied and verified on disk.</p></div>
+      <div class="search"><svg class="ic"><use href="../../web/assets/icons.svg#i-search"/></svg>Search flags, presets…<span class="kbd">Ctrl K</span></div>
+      <span class="btn p"><svg class="ic"><use href="../../web/assets/icons.svg#i-bolt"/></svg>Apply</span></div>
+    <div class="grid">
+      <div class="card hero"><div class="img"></div><div class="body">
+        <span class="eyebrow">Selected game</span><h2>Rivals</h2>
+        <div class="row"><span class="badge b-ok">● Config verified</span><span class="badge b-n">In-game not verified</span></div>
+        <div class="stats"><div class="stat"><b>15</b><span>honored</span></div><div class="stat"><b>0</b><span>ignored</span></div><div class="stat"><b>0</b><span>conflicts</span></div></div>
+        <div class="row" style="margin-top:auto"><span class="btn">Open editor</span><span class="btn">Change profile</span></div></div></div>
+      <div class="card"><h3><svg class="ic"><use href="../../web/assets/icons.svg#i-shield"/></svg>Application health</h3>
+        <div class="list">
+          <div class="it"><span class="badge b-ok">OK</span><div><div class="t">Fishstrap target</div><div class="s">File readable and writable</div></div></div>
+          <div class="it"><span class="badge b-ok">OK</span><div><div class="t">One renderer</div><div class="s">Vulkan preferred</div></div></div>
+          <div class="it"><span class="badge b-warn">Note</span><div><div class="t">Roblox is running</div><div class="s">Restart it to load changes</div></div></div>
+          <div class="it"><span class="badge b-info">Info</span><div><div class="t">3 backups</div><div class="s">Latest 19:27 today</div></div></div>
+        </div></div>
+      <div class="card"><h3><svg class="ic"><use href="../../web/assets/icons.svg#i-presets"/></svg>Recent presets<a>View all</a></h3>
+        <div class="list">
+          <div class="it"><div class="thumb" style="background:#8C9096"></div><div><div class="t">Rivals: No Textures</div><div class="s">12 flags · built-in</div></div><span class="r badge b-ok">Active</span></div>
+          <div class="it"><div class="thumb" style="background-image:url(../../web/assets/arena-640.jpg)"></div><div><div class="t">My Fishstrap flags (Vulkan)</div><div class="s">15 flags · yours</div></div><span class="r badge b-n">Applied 19:27</span></div>
+          <div class="it"><div class="thumb" style="background:linear-gradient(135deg,#FF6A3D,#FFB547)"></div><div><div class="t">Rivals: Max FPS</div><div class="s">9 flags · built-in</div></div></div>
+        </div></div>
+      <div style="display:flex;flex-direction:column;gap:20px">
+        <div class="card"><h3><svg class="ic"><use href="../../web/assets/icons.svg#i-bolt"/></svg>Quick actions</h3>
+          <div class="qa"><div><svg class="ic"><use href="../../web/assets/icons.svg#i-import"/></svg>Import</div><div><svg class="ic"><use href="../../web/assets/icons.svg#i-backup"/></svg>Restore</div><div><svg class="ic"><use href="../../web/assets/icons.svg#i-diagnostics"/></svg>Diagnose</div><div><svg class="ic"><use href="../../web/assets/icons.svg#i-compare"/></svg>Preview</div></div></div>
+        <div class="card act"><h3><svg class="ic"><use href="../../web/assets/icons.svg#i-clock"/></svg>Recent activity</h3>
+          <div class="list"><div class="it"><span class="ic2"><svg class="ic"><use href="../../web/assets/icons.svg#i-check"/></svg></span><div><div class="t">Applied · Replace</div><div class="s">15 flags written, read back OK</div></div><span class="r s">19:27</span></div>
+          <div class="it"><span class="ic2"><svg class="ic"><use href="../../web/assets/icons.svg#i-backup"/></svg></span><div><div class="t">Backup created</div><div class="s">277 flags saved</div></div><span class="r s">19:27</span></div></div></div>
+      </div>
+    </div>
+  </main>
+</div>
+<section class="spec">
+  <div><h4>Palette</h4><div class="sw">
+    <div style="background:#0C0D10">bg 0C0D10</div><div style="background:#131519">s1 131519</div><div style="background:#1A1D22">s2 1A1D22</div><div style="background:#22262C">s3 22262C</div>
+    <div style="background:#FF6A3D;color:#1A0A04">accent FF6A3D</div><div style="background:#FFB547;color:#1A0A04">amber FFB547</div><div style="background:#ECEDEF;color:#111">text ECEDEF</div><div style="background:#A3A8B0;color:#111">text2 A3A8B0</div>
+    <div style="background:#3DD68C;color:#04170E">ok</div><div style="background:#F5B544;color:#1B1203">warn</div><div style="background:#F2555A;color:#1D0405">error</div><div style="background:#5AA9FF;color:#03111F">info</div></div></div>
+  <div class="ty"><h4>Typography · Segoe UI Variable + Bahnschrift</h4>
+    <div style="font:600 28px 'Segoe UI Variable Display'">Display 28<small>600</small></div>
+    <div style="font:600 20px 'Segoe UI Variable Display'">Title 20<small>600</small></div>
+    <div style="font:600 15px 'Segoe UI Variable Text'">Heading 15<small>600</small></div>
+    <div style="font:400 14px 'Segoe UI Variable Text'">Body 14 — calm, readable, compact<small>400</small></div>
+    <div style="font:400 12px 'Segoe UI Variable Text';color:var(--tx3)">Caption 12<small>400</small></div>
+    <div style="font:600 26px Bahnschrift">60 · 144 · 240<small>numerals</small></div></div>
+  <div class="cmp"><h4>Components</h4>
+    <div class="row"><span class="btn p">Primary</span><span class="btn">Secondary</span><span class="btn" style="background:transparent;border-color:transparent;color:var(--tx2)">Ghost</span><span class="btn" style="opacity:.4">Disabled</span></div>
+    <div class="row"><span class="inp">Default input</span><span class="inp f">Focused input</span></div>
+    <div class="row"><span class="sw2"></span><span class="sw2 off"></span><span class="sl"><i></i><b></b></span></div>
+    <div class="row"><span class="badge b-ok">Active</span><span class="badge b-warn">Ignored</span><span class="badge" style="background:rgba(242,85,90,.12);color:var(--err)">Invalid</span><span class="badge b-n">Disabled</span><span class="badge b-info">Info</span></div>
+  </div>
+</section>
+</body></html>

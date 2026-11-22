@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 120" width="160" height="120" role="img"><title>Log is empty</title>
+<ellipse cx="80" cy="106" rx="54" ry="6" fill="#131519"/>
+<rect x="34" y="20" width="92" height="78" rx="8" fill="#22262C" stroke="#343941"/>
+<rect x="34" y="20" width="92" height="16" rx="8" fill="#2A2F36"/>
+<circle cx="44" cy="28" r="2.5" fill="#8A9099"/><circle cx="52" cy="28" r="2.5" fill="#8A9099"/>
+<path d="M46 52l8 6-8 6" fill="none" stroke="#3DD68C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="60" y="62" width="22" height="4" rx="2" fill="#8A9099"/>
+<rect x="46" y="76" width="56" height="4" rx="2" fill="#2A2F36"/><rect x="46" y="85" width="40" height="4" rx="2" fill="#2A2F36"/></svg>

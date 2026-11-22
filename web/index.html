@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>Firetier</title>
+<link rel="icon" href="assets/logo-64.png">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/app.css">
+<link rel="stylesheet" href="css/fx.css">
+</head>
+<body>
+<div id="splash" class="splash" role="status" aria-live="polite" aria-label="Firetier is starting">
+  <canvas id="splash-fire" aria-hidden="true"></canvas>
+  <div class="splash-core">
+    <div class="splash-logo"><img src="assets/logo-256.png" alt=""></div>
+    <h1 class="splash-word" aria-label="Firetier"><span style="--i:0">F</span><span style="--i:1">i</span><span style="--i:2">r</span><span style="--i:3">e</span><span style="--i:4">t</span><span style="--i:5">i</span><span style="--i:6">e</span><span style="--i:7">r</span></h1>
+    <div class="splash-hello" id="splash-hello">FastFlag profiles for Rivals</div>
+    <div class="splash-bar"><i id="splash-bar"></i></div>
+    <ul class="splash-steps" id="splash-steps"></ul>
+  </div>
+  <div class="splash-foot"><span id="splash-ver">Local only · 127.0.0.1</span><span>Click to skip</span></div>
+</div>
+<div class="app">
+  <nav class="sidebar" aria-label="Main">
+    <div class="brand">
+      <img src="assets/logo-64.png" alt="">
+      <div><b>Firetier</b><small>FastFlag profiles</small></div>
+    </div>
+    <a class="nav-item" href="#/dashboard" data-route="dashboard" data-tip="Dashboard" data-tip-pos="right"><svg class="ic"><use href="assets/icons.svg#i-home"/></svg><span>Dashboard</span></a>
+    <a class="nav-item" href="#/games" data-route="games" data-tip="Games" data-tip-pos="right"><svg class="ic"><use href="assets/icons.svg#i-games"/></svg><span>Games</span></a>
+    <a class="nav-item" href="#/presets" data-route="presets" data-tip="Presets" data-tip-pos="right"><svg class="ic"><use href="assets/icons.svg#i-presets"/></svg><span>Presets</span><b class="nav-count" id="nav-presets"></b></a>
+    <a class="nav-item" href="#/editor" data-route="editor" data-tip="Editor" data-tip-pos="right"><svg class="ic"><use href="assets/icons.svg#i-editor"/></svg><span>Editor</span></a>
+    <a class="nav-item" href="#/assets" data-route="assets" data-tip="Asset Studio" data-tip-pos="right"><svg class="ic"><use href="assets/icons.svg#i-assets"/></svg><span>Asset Studio</span></a>
+    <div class="nav-label eyebrow">System</div>
+    <a class="nav-item" href="#/diagnostics" data-route="diagnostics" data-tip="Diagnostics" data-tip-pos="right"><svg class="ic"><use href="assets/icons.svg#i-diagnostics"/></svg><span>Diagnostics</span><b class="nav-count" id="nav-diag"></b></a>
+    <a class="nav-item" href="#/settings" data-route="settings" data-tip="Settings" data-tip-pos="right"><svg class="ic"><use href="assets/icons.svg#i-settings"/></svg><span>Settings</span><b class="nav-count upd" id="nav-upd"></b></a>
+    <div class="side-foot">
+      <button class="acct-chip" id="acct-chip" type="button" data-tip="Roblox account" data-tip-pos="right">
+        <span class="av" id="acct-av"><svg class="ic sm" aria-hidden="true"><use href="assets/icons.svg#i-user"/></svg></span>
+        <span class="who"><b id="acct-name">Roblox account</b><small id="acct-sub">Not connected</small></span>
+      </button>
+      <button class="target-mini" id="target-mini" type="button" data-tip="Choose where profiles are written" data-tip-pos="right">
+        <span class="dot" id="target-dot"></span><b id="target-name">Loading…</b>
+        <span class="sub" id="target-sub"></span>
+      </button>
+    </div>
+  </nav>
+  <main class="main" id="main">
+    <header class="topbar" id="topbar">
+      <div class="ttl"><h1 id="page-title">Firetier</h1><div class="sub" id="page-sub"></div></div>
+      <div class="end" id="page-actions"></div>
+    </header>
+    <div class="scroll" id="scroll"><div class="page" id="page"><div class="skel title"></div><div class="skel line"></div><div class="skel line"></div></div></div>
+  </main>
+</div>
+<div class="toasts" id="toasts" role="status" aria-live="polite"></div>
+<script src="js/preview.js"></script>
+<script src="js/fx.js"></script>
+<script src="js/app.js"></script>
+<script src="js/pages-main.js"></script>
+<script src="js/pages-editor.js"></script>
+<script src="js/pages-system.js"></script>
+</body>
+</html>

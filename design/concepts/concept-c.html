@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Concept C · Vector</title>
+<style>
+:root{--bg:#070A12;--s1:#0C1120;--s2:#111829;--line:rgba(120,170,255,.14);--tx:#E4ECFF;--tx2:#8FA0C4;--tx3:#5A6A8E;--c:#38E1FF;--v:#8B5CFF;--ok:#3CF2A5;--warn:#FFC857;--err:#FF5C7A}
+*{box-sizing:border-box;margin:0}
+body{background:#04060B;color:var(--tx);font:14px/1.45 "Segoe UI Variable Text","Segoe UI",sans-serif}
+svg.ic{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.app{width:1440px;height:900px;display:grid;grid-template-columns:84px 1fr;overflow:hidden;background:var(--bg) linear-gradient(rgba(56,225,255,.035) 1px,transparent 1px) 0 0/100% 32px,linear-gradient(90deg,rgba(56,225,255,.035) 1px,transparent 1px) 0 0/32px 100%}
+.side{border-right:1px solid var(--line);display:flex;flex-direction:column;align-items:center;padding:18px 0;gap:10px;background:rgba(7,10,18,.8)}
+.side img{width:36px;height:36px;border-radius:8px;margin-bottom:16px}
+.nv{width:56px;height:52px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;color:var(--tx3);font:600 9px Bahnschrift;letter-spacing:1px;text-transform:uppercase;clip-path:polygon(8px 0,100% 0,100% calc(100% - 8px),calc(100% - 8px) 100%,0 100%,0 8px)}
+.nv.on{color:var(--c);background:rgba(56,225,255,.08);box-shadow:inset 0 0 0 1px rgba(56,225,255,.3)}
+main{padding:28px 34px;display:flex;flex-direction:column;gap:22px}
+.hd{display:flex;align-items:flex-end;gap:16px}
+.hd h1{font:600 30px Bahnschrift;letter-spacing:3px;text-transform:uppercase}
+.hd span{color:var(--c);font:12px Consolas;letter-spacing:1px}
+.cut{clip-path:polygon(14px 0,100% 0,100% calc(100% - 14px),calc(100% - 14px) 100%,0 100%,0 14px);background:linear-gradient(180deg,rgba(17,24,41,.95),rgba(12,17,32,.95));border:1px solid var(--line);position:relative;padding:18px}
+.g{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:18px}
+.lab{font:600 11px Bahnschrift;letter-spacing:2px;color:var(--tx3);text-transform:uppercase;margin-bottom:12px;display:flex;gap:8px;align-items:center}
+.lab::before{content:"";width:6px;height:6px;background:var(--c)}
+.big{font:300 64px/1 Bahnschrift;color:var(--c);text-shadow:0 0 24px rgba(56,225,255,.35)}
+.hero{grid-row:span 2;padding:0;overflow:hidden;min-height:360px}
+.hero .im{height:210px;background:url(../../web/assets/arena-1280.jpg) center/cover;filter:saturate(.6) hue-rotate(170deg) brightness(.8)}
+.hero .b{padding:18px}
+.bar{height:6px;background:rgba(120,170,255,.12);margin:8px 0 4px}.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--v),var(--c))}
+.pill{display:inline-flex;height:22px;align-items:center;padding:0 10px;font:600 11px Bahnschrift;letter-spacing:1px;text-transform:uppercase;border:1px solid}
+.ok{color:var(--ok);border-color:rgba(60,242,165,.4)}.wn{color:var(--warn);border-color:rgba(255,200,87,.4)}
+.ln{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px dashed var(--line);color:var(--tx2)}
+.ln b{color:var(--tx);font-weight:500}
+.btn{height:38px;padding:0 18px;display:inline-flex;align-items:center;gap:8px;font:600 12px Bahnschrift;letter-spacing:2px;text-transform:uppercase;clip-path:polygon(10px 0,100% 0,100% calc(100% - 10px),calc(100% - 10px) 100%,0 100%,0 10px)}
+.btn.p{background:linear-gradient(90deg,var(--v),var(--c));color:#04060B}.btn.s{background:rgba(56,225,255,.08);color:var(--c);box-shadow:inset 0 0 0 1px rgba(56,225,255,.35)}
+.spec{width:1440px;padding:36px 48px;display:grid;grid-template-columns:1fr 1fr 1.2fr;gap:36px;background:#04060B;border-top:1px solid var(--line)}
+.spec h4{font:600 11px Bahnschrift;letter-spacing:2px;color:var(--tx3);text-transform:uppercase;margin-bottom:12px}
+.sw{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}.sw div{height:52px;border:1px solid var(--line);font:10px Consolas;padding:5px;display:flex;align-items:flex-end}
+</style></head><body>
+<div class="app">
+  <aside class="side"><img src="../../web/assets/logo-64.png" alt="">
+    <div class="nv on"><svg class="ic"><use href="../../web/assets/icons.svg#i-home"/></svg>Hub</div><div class="nv"><svg class="ic"><use href="../../web/assets/icons.svg#i-games"/></svg>Games</div><div class="nv"><svg class="ic"><use href="../../web/assets/icons.svg#i-presets"/></svg>Presets</div><div class="nv"><svg class="ic"><use href="../../web/assets/icons.svg#i-editor"/></svg>Editor</div><div class="nv"><svg class="ic"><use href="../../web/assets/icons.svg#i-assets"/></svg>Assets</div><div class="nv"><svg class="ic"><use href="../../web/assets/icons.svg#i-diagnostics"/></svg>Diag</div><div class="nv" style="margin-top:auto"><svg class="ic"><use href="../../web/assets/icons.svg#i-settings"/></svg>Config</div></aside>
+  <main>
+    <div class="hd"><h1>Command Hub</h1><span>// TARGET: FISHSTRAP · SYNC OK</span><span class="btn p" style="margin-left:auto">Deploy profile</span></div>
+    <div class="g">
+      <div class="cut hero"><div class="im"></div><div class="b"><div class="lab">Active game</div><div style="font:600 26px Bahnschrift;letter-spacing:2px">RIVALS</div>
+        <div style="display:flex;gap:8px;margin-top:10px"><span class="pill ok">Config verified</span><span class="pill wn">In-game unverified</span></div></div></div>
+      <div class="cut"><div class="lab">Honored flags</div><div class="big">15</div><div class="bar"><i style="width:100%"></i></div><div style="color:var(--tx3);font-size:12px">15 / 15 on allowlist</div></div>
+      <div class="cut"><div class="lab">Backups</div><div class="big" style="color:var(--v);text-shadow:0 0 24px rgba(139,92,255,.4)">03</div><div style="color:var(--tx3);font-size:12px">Latest 19:27</div></div>
+      <div class="cut" style="grid-column:span 2"><div class="lab">System scan</div>
+        <div class="ln">Fishstrap target<b>Writable</b></div><div class="ln">Renderer<b>Vulkan only</b></div><div class="ln">Roblox process<b style="color:var(--warn)">Running — restart to load</b></div><div class="ln">Asset replacement<b style="color:var(--tx3)">Unsupported</b></div></div>
+    </div>
+    <div style="display:flex;gap:10px"><span class="btn s">Import</span><span class="btn s">Restore</span><span class="btn s">Run scan</span></div>
+  </main>
+</div>
+<section class="spec">
+  <div><h4>Palette</h4><div class="sw"><div style="background:#070A12">bg</div><div style="background:#111829">surface</div><div style="background:#38E1FF;color:#000">cyan</div><div style="background:#8B5CFF">violet</div><div style="background:#3CF2A5;color:#000">ok</div><div style="background:#FFC857;color:#000">warn</div><div style="background:#FF5C7A">error</div><div style="background:#E4ECFF;color:#000">text</div></div></div>
+  <div><h4>Typography · Bahnschrift display</h4><div style="font:600 28px Bahnschrift;letter-spacing:3px">COMMAND HUB</div><div style="font:600 14px Bahnschrift;letter-spacing:2px;color:var(--tx2)">SECTION LABEL</div><div style="margin-top:6px">Body 14 Segoe UI Variable</div><div style="font:300 44px Bahnschrift;color:var(--c)">144</div></div>
+  <div><h4>Components</h4><div style="display:flex;gap:8px;margin-bottom:12px"><span class="btn p">Primary</span><span class="btn s">Secondary</span></div><div style="display:flex;gap:8px"><span class="pill ok">Active</span><span class="pill wn">Ignored</span></div></div>
+</section>
+</body></html>

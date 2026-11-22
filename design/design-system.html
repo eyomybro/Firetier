@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Firetier design system · Ember</title>
+<link rel="stylesheet" href="../web/css/tokens.css">
+<link rel="stylesheet" href="../web/css/components.css">
+<link rel="stylesheet" href="../web/css/app.css">
+<style>
+  body{overflow:auto;height:auto}
+  .ds{max-width:1360px;margin:0 auto;padding:40px 48px 80px}
+  .ds-hd{display:flex;align-items:center;gap:16px;margin-bottom:8px}
+  .ds-hd img{width:44px;height:44px}
+  .ds > p{color:var(--tx2);max-width:760px;margin-bottom:28px}
+  section.sec{border-top:1px solid var(--line);padding:28px 0;display:grid;grid-template-columns:200px 1fr;gap:32px}
+  section.sec > header h2{font-size:17px}
+  section.sec > header p{color:var(--tx3);font-size:12px;margin-top:6px}
+  .grid{display:grid;gap:16px}
+  .g4{grid-template-columns:repeat(4,minmax(0,1fr))}.g3{grid-template-columns:repeat(3,minmax(0,1fr))}.g2{grid-template-columns:repeat(2,minmax(0,1fr))}.g5{grid-template-columns:repeat(5,minmax(0,1fr))}
+  .sw{border-radius:var(--r-md);border:1px solid var(--line);overflow:hidden;background:var(--s1)}
+  .sw i{display:block;height:56px}
+  .sw div{padding:8px 10px;font-size:12px}.sw code{font:11px var(--font-mono);color:var(--tx3)}
+  .states{display:grid;grid-template-columns:110px repeat(5,minmax(0,1fr));gap:12px 16px;align-items:center}
+  .states .h{font:600 11px var(--font);letter-spacing:.6px;text-transform:uppercase;color:var(--tx3)}
+  .states .rl{color:var(--tx2);font-size:12px}
+  .demo{background:var(--bg);border:1px solid var(--line);border-radius:var(--r-lg);padding:20px}
+  .tip-demo{position:relative;display:inline-block}
+  .force-tip::after{opacity:1!important;transform:translate(-50%,0)!important}
+  .ruler{display:flex;align-items:flex-end;gap:14px}
+  .ruler div{background:var(--ac-soft);border:1px solid var(--ac-line);border-radius:2px}
+  .ruler span{display:block;text-align:center;font:11px var(--font-mono);color:var(--tx3);margin-top:6px}
+</style></head>
+<body>
+<div class="ds">
+  <div class="ds-hd"><img src="../web/assets/logo-128.png" alt=""><div><div class="eyebrow">Firetier 0.1 · design system</div><h1>Ember</h1></div></div>
+  <p>Graphite surfaces, one warm accent, status colours used only for status. Elevation comes from a lighter surface step, not from shadows; shadows are only for things that float (menus, modals, toasts). Every interactive component below is shown in its default, hover, focus, pressed and disabled state. The forced states are generated from the real CSS rules, so this page can't drift from the app.</p>
+
+  <section class="sec"><header><h2>Colour</h2><p>tokens.css · contrast checked against --s1</p></header>
+    <div class="grid" style="gap:20px">
+      <div class="grid g5" id="sw-surface"></div>
+      <div class="grid g5" id="sw-text"></div>
+      <div class="grid g5" id="sw-status"></div>
+    </div></section>
+
+  <section class="sec"><header><h2>Typography</h2><p>Segoe UI Variable Display/Text, Bahnschrift for numbers, Cascadia Mono/Consolas for flags</p></header>
+    <div class="grid" style="gap:10px">
+      <div style="font:600 34px/1.15 var(--font-display)">Display 34 · Good evening</div>
+      <h1>H1 26 · Customization Editor</h1><h2>H2 20 · Recent presets</h2><h3>H3 16 · Card title</h3>
+      <div>Body 14 · Writes FastFlags to the file Fishstrap copies into Roblox at launch.</div>
+      <div class="muted" style="font-size:13px">Secondary 13 · Last applied 2 minutes ago</div>
+      <div class="eyebrow">Eyebrow 11 · Section label</div>
+      <div class="mono">Mono 12.5 · DFIntTextureQualityOverride = 0</div>
+      <div class="num" style="font-size:40px;font-weight:300">18 <span style="font-size:15px;color:var(--tx3)">honored flags</span></div>
+    </div></section>
+
+  <section class="sec"><header><h2>Spacing, radius, shadow</h2><p>4 px grid</p></header>
+    <div class="grid g3">
+      <div class="ruler"><div><div style="width:4px;height:4px"></div><span>4</span></div><div><div style="width:8px;height:8px"></div><span>8</span></div><div><div style="width:12px;height:12px"></div><span>12</span></div><div><div style="width:16px;height:16px"></div><span>16</span></div><div><div style="width:20px;height:20px"></div><span>20</span></div><div><div style="width:24px;height:24px"></div><span>24</span></div><div><div style="width:32px;height:32px"></div><span>32</span></div></div>
+      <div class="ruler"><div style="width:44px;height:44px;border-radius:4px"></div><div style="width:44px;height:44px;border-radius:6px"></div><div style="width:44px;height:44px;border-radius:10px"></div><div style="width:44px;height:44px;border-radius:14px"></div><div style="width:64px;height:28px;border-radius:999px"></div></div>
+      <div class="ruler" style="gap:20px"><div style="width:80px;height:56px;background:var(--s2);border:0;box-shadow:var(--sh-pop)"></div><div style="width:80px;height:56px;background:var(--s2);border:0;box-shadow:var(--sh-modal)"></div></div>
+    </div></section>
+
+  <section class="sec"><header><h2>Navigation</h2><p>Sidebar items. The active item gets the accent bar and a surface step.</p></header>
+    <div class="states">
+      <span></span><span class="h">Default</span><span class="h">Hover</span><span class="h">Focus</span><span class="h">Pressed</span><span class="h">Active page</span>
+      <span class="rl">Sidebar item</span>
+      <div class="sidebar-demo"><a class="nav-item"><svg class="ic"><use href="../web/assets/icons.svg#i-presets"/></svg><span>Presets</span></a></div>
+      <div class="sidebar-demo"><a class="nav-item is-hover"><svg class="ic"><use href="../web/assets/icons.svg#i-presets"/></svg><span>Presets</span></a></div>
+      <div class="sidebar-demo"><a class="nav-item is-focus"><svg class="ic"><use href="../web/assets/icons.svg#i-presets"/></svg><span>Presets</span></a></div>
+      <div class="sidebar-demo"><a class="nav-item is-active"><svg class="ic"><use href="../web/assets/icons.svg#i-presets"/></svg><span>Presets</span></a></div>
+      <div class="sidebar-demo"><a class="nav-item" aria-current="page"><svg class="ic"><use href="../web/assets/icons.svg#i-presets"/></svg><span>Presets</span><span class="nav-count">6</span></a></div>
+    </div></section>
+
+  <section class="sec"><header><h2>Buttons</h2><p>Primary is used once per view, for the main action.</p></header>
+    <div class="states" id="btn-states"></div></section>
+
+  <section class="sec"><header><h2>Inputs</h2><p>Text, search, select</p></header>
+    <div class="states">
+      <span></span><span class="h">Default</span><span class="h">Hover</span><span class="h">Focus</span><span class="h">Invalid</span><span class="h">Disabled</span>
+      <span class="rl">Text</span>
+      <input class="input" value="Rivals: No Textures"><input class="input is-hover" value="Rivals: No Textures"><input class="input is-focus" value="Rivals: No Textures"><input class="input" aria-invalid="true" value="banana"><input class="input" disabled value="Built-in preset">
+      <span class="rl">Search</span>
+      <div class="input-wrap"><svg class="ic sm"><use href="../web/assets/icons.svg#i-search"/></svg><input class="input" placeholder="Search presets"></div>
+      <div class="input-wrap"><svg class="ic sm"><use href="../web/assets/icons.svg#i-search"/></svg><input class="input is-hover" placeholder="Search presets"></div>
+      <div class="input-wrap"><svg class="ic sm"><use href="../web/assets/icons.svg#i-search"/></svg><input class="input is-focus" value="vulkan"></div>
+      <div class="input-wrap"><svg class="ic sm"><use href="../web/assets/icons.svg#i-search"/></svg><input class="input" aria-invalid="true" value="[["></div>
+      <div class="input-wrap"><svg class="ic sm"><use href="../web/assets/icons.svg#i-search"/></svg><input class="input" disabled placeholder="Search presets"></div>
+      <span class="rl">Select</span>
+      <select class="select"><option>Fishstrap</option></select><select class="select is-hover"><option>Fishstrap</option></select><select class="select is-focus"><option>Fishstrap</option></select><select class="select" aria-invalid="true"><option>Missing file</option></select><select class="select" disabled><option>No targets</option></select>
+      <span class="rl">With hint</span>
+      <div class="field" style="grid-column:span 2"><label>Value</label><input class="input mono" aria-invalid="true" value="-3"><span class="hint err">Must be between 0 and 10000.</span></div>
+      <div class="field" style="grid-column:span 3"><label>Custom target file</label><input class="input mono" value="D:\Roblox\ClientSettings\ClientAppSettings.json"><span class="hint">An absolute path to a .json file.</span></div>
+    </div></section>
+
+  <section class="sec"><header><h2>Dropdown menu</h2><p>Opens below its trigger, closes on Esc or outside click</p></header>
+    <div class="grid g3">
+      <div class="demo" style="position:relative;height:250px"><button class="btn sm">Fishstrap <svg class="ic sm"><use href="../web/assets/icons.svg#i-chevron-down"/></svg></button>
+        <div class="menu" style="top:58px;left:20px;animation:none" role="menu">
+          <button class="menu-item"><svg class="ic sm"><use href="../web/assets/icons.svg#i-check"/></svg>Fishstrap<span class="end">15 flags</span></button>
+          <button class="menu-item is-hover"><span style="width:16px"></span>Bloxstrap<span class="end">empty</span></button>
+          <button class="menu-item is-focus"><span style="width:16px"></span>Roblox 0.700</button>
+          <button class="menu-item" disabled><span style="width:16px"></span>Voidstrap<span class="end">not installed</span></button>
+          <div class="menu-sep"></div>
+          <button class="menu-item"><svg class="ic sm"><use href="../web/assets/icons.svg#i-folder"/></svg>Pick a file…</button></div></div>
+      <div class="demo" style="position:relative;height:250px"><button class="btn icon sm ghost is-active"><svg class="ic sm"><use href="../web/assets/icons.svg#i-more"/></svg></button>
+        <div class="menu" style="top:58px;left:20px;animation:none" role="menu">
+          <button class="menu-item"><svg class="ic sm"><use href="../web/assets/icons.svg#i-copy"/></svg>Duplicate</button>
+          <button class="menu-item"><svg class="ic sm"><use href="../web/assets/icons.svg#i-edit"/></svg>Rename<span class="end"><span class="kbd">F2</span></span></button>
+          <button class="menu-item"><svg class="ic sm"><use href="../web/assets/icons.svg#i-export"/></svg>Export…</button>
+          <div class="menu-sep"></div>
+          <button class="menu-item danger"><svg class="ic sm"><use href="../web/assets/icons.svg#i-trash"/></svg>Move to trash</button></div></div>
+      <div class="demo"><div class="eyebrow" style="margin-bottom:12px">Segmented & tabs</div>
+        <div class="seg" role="tablist"><button aria-pressed="true">Split</button><button class="is-hover">Side by side</button><button class="is-focus">Profile</button><button disabled>Live</button></div>
+        <div class="tabs" style="margin-top:20px"><button class="tab" aria-selected="true">Flags <span class="count">12</span></button><button class="tab is-hover">Report</button><button class="tab is-focus">Source</button><button class="tab" disabled>History</button></div></div>
+    </div></section>
+
+  <section class="sec"><header><h2>Slider, switch, checkbox</h2></header>
+    <div class="states">
+      <span></span><span class="h">Default</span><span class="h">Hover</span><span class="h">Focus</span><span class="h">Pressed</span><span class="h">Disabled</span>
+      <span class="rl">Slider</span>
+      <input type="range" class="range" style="--pct:40%" value="40"><input type="range" class="range is-hover" style="--pct:40%" value="40"><input type="range" class="range is-focus" style="--pct:40%" value="40"><input type="range" class="range is-active" style="--pct:40%" value="40"><input type="range" class="range" disabled style="--pct:40%" value="40">
+      <span class="rl">Switch off</span>
+      <label class="switch"><input type="checkbox"><span class="track"></span><span>Off</span></label><label class="switch is-hover"><input type="checkbox"><span class="track"></span><span>Off</span></label><label class="switch"><input type="checkbox" class="is-focus"><span class="track"></span><span>Off</span></label><label class="switch is-active"><input type="checkbox"><span class="track"></span><span>Off</span></label><label class="switch"><input type="checkbox" disabled><span class="track"></span><span>Off</span></label>
+      <span class="rl">Switch on</span>
+      <label class="switch"><input type="checkbox" checked><span class="track"></span><span>On</span></label><label class="switch is-hover"><input type="checkbox" checked><span class="track"></span><span>On</span></label><label class="switch"><input type="checkbox" checked class="is-focus"><span class="track"></span><span>On</span></label><label class="switch is-active"><input type="checkbox" checked class="is-active"><span class="track"></span><span>On</span></label><label class="switch"><input type="checkbox" checked disabled><span class="track"></span><span>On</span></label>
+      <span class="rl">Checkbox</span>
+      <label class="check"><input type="checkbox" checked>Enabled</label><label class="check"><input type="checkbox" class="is-hover">Enabled</label><label class="check"><input type="checkbox" checked class="is-focus">Enabled</label><label class="check"><input type="checkbox" checked class="is-active">Enabled</label><label class="check"><input type="checkbox" disabled>Enabled</label>
+    </div></section>
+
+  <section class="sec"><header><h2>Cards</h2><p>Hover lifts 2 px; selected uses the accent line</p></header>
+    <div class="grid g4" id="card-states"></div></section>
+
+  <section class="sec"><header><h2>Badges & status</h2><p>Text plus icon, never colour alone</p></header>
+    <div class="btn-row">
+      <span class="badge ok"><svg class="ic"><use href="../web/assets/icons.svg#i-check"/></svg>Honored</span>
+      <span class="badge warn"><svg class="ic"><use href="../web/assets/icons.svg#i-alert"/></svg>Ignored by Roblox</span>
+      <span class="badge err"><svg class="ic"><use href="../web/assets/icons.svg#i-x-circle"/></svg>Invalid value</span>
+      <span class="badge info"><svg class="ic"><use href="../web/assets/icons.svg#i-info"/></svg>Not verified in-game</span>
+      <span class="badge ac"><svg class="ic"><use href="../web/assets/icons.svg#i-flame"/></svg>Rivals</span>
+      <span class="badge">Disabled</span>
+      <span class="badge outline"><svg class="ic"><use href="../web/assets/icons.svg#i-lock"/></svg>Read-only</span>
+      <span class="badge err outline"><svg class="ic"><use href="../web/assets/icons.svg#i-lock"/></svg>Unsupported · stored only</span>
+      <span style="display:inline-flex;gap:6px;align-items:center;margin-left:12px"><span class="dot ok"></span>Writable</span>
+      <span style="display:inline-flex;gap:6px;align-items:center"><span class="dot warn"></span>Roblox running</span>
+      <span style="display:inline-flex;gap:6px;align-items:center"><span class="dot err"></span>Unreadable</span>
+    </div></section>
+
+  <section class="sec"><header><h2>Tooltip</h2><p>350 ms delay, also on keyboard focus</p></header>
+    <div class="btn-row" style="padding-top:44px;gap:120px">
+      <span class="tip-demo"><button class="btn icon force-tip" data-tip="Undo (Ctrl+Z)"><svg class="ic"><use href="../web/assets/icons.svg#i-undo"/></svg></button></span>
+      <span class="tip-demo"><span class="badge info force-tip" data-tip="Firetier can't see inside Roblox.">Not verified in-game</span></span>
+    </div></section>
+
+  <section class="sec"><header><h2>Modal</h2><p>Focus is trapped; Esc and the scrim close it unless work is running</p></header>
+    <div class="demo" style="display:grid;place-items:center;background:var(--overlay);padding:28px">
+      <div class="modal" style="animation:none" role="dialog" aria-labelledby="m-t">
+        <div class="modal-hd"><svg class="ic lg" style="color:var(--warn)"><use href="../web/assets/icons.svg#i-alert"/></svg><div><h3 id="m-t">Replace every flag in Fishstrap?</h3><p class="muted" style="margin-top:4px">Replace mode removes the 3 flags that aren't in this profile. A backup is made first.</p></div><button class="btn icon sm ghost end" aria-label="Close"><svg class="ic sm"><use href="../web/assets/icons.svg#i-x"/></svg></button></div>
+        <div class="modal-bd"><div class="callout"><svg class="ic"><use href="../web/assets/icons.svg#i-backup"/></svg><div>Backup <span class="mono">20261121-194012</span> will be created.<p>You can restore it from Diagnostics › Recovery.</p></div></div></div>
+        <div class="modal-ft"><button class="btn ghost">Cancel</button><button class="btn primary">Replace and apply</button></div>
+      </div></div></section>
+
+  <section class="sec"><header><h2>Notifications</h2><p>Bottom-right toasts, 5 s, pause on hover</p></header>
+    <div class="grid g2">
+      <div class="toast ok" style="animation:none"><svg class="ic"><use href="../web/assets/icons.svg#i-check-circle"/></svg><div><b>Written to Fishstrap</b><p>12 flags written and read back. Restart Roblox to load them. In-game effect not verified.</p></div><button class="btn icon sm ghost" aria-label="Dismiss"><svg class="ic sm"><use href="../web/assets/icons.svg#i-x"/></svg></button></div>
+      <div class="toast warn" style="animation:none"><svg class="ic"><use href="../web/assets/icons.svg#i-alert"/></svg><div><b>Roblox is running</b><p>Changes load next time Roblox starts.</p></div><button class="btn icon sm ghost" aria-label="Dismiss"><svg class="ic sm"><use href="../web/assets/icons.svg#i-x"/></svg></button></div>
+      <div class="toast err" style="animation:none"><svg class="ic"><use href="../web/assets/icons.svg#i-x-circle"/></svg><div><b>Couldn't write the file</b><p>Access denied. Nothing changed; your backup is intact.</p></div><button class="btn icon sm ghost" aria-label="Dismiss"><svg class="ic sm"><use href="../web/assets/icons.svg#i-x"/></svg></button></div>
+      <div class="toast info" style="animation:none"><svg class="ic"><use href="../web/assets/icons.svg#i-info"/></svg><div><b>Imported as stored-only</b><p>This Fleasion profile swaps assets. Firetier keeps it but can't apply it.</p></div><button class="btn icon sm ghost" aria-label="Dismiss"><svg class="ic sm"><use href="../web/assets/icons.svg#i-x"/></svg></button></div>
+    </div></section>
+
+  <section class="sec"><header><h2>Loading</h2><p>Skeletons for first load, spinners inside buttons, bars for known progress</p></header>
+    <div class="grid g3">
+      <div class="card"><div class="skel title"></div><div class="skel line"></div><div class="skel line" style="width:80%"></div><div class="skel line" style="width:60%"></div></div>
+      <div class="card" style="display:flex;flex-direction:column;gap:16px"><div class="progress"><i style="width:62%"></i></div><div class="progress ok"><i style="width:100%"></i></div><div class="progress indeterminate"><i></i></div></div>
+      <div class="card" style="display:flex;gap:16px;align-items:center"><div class="spinner"></div><button class="btn primary loading">Applying</button><button class="btn loading">Saving</button></div>
+    </div></section>
+
+  <section class="sec"><header><h2>Empty & error states</h2><p>Hand-made SVG art, one per context</p></header>
+    <div class="grid g3">
+      <div class="card"><div class="state"><img src="../web/assets/illus/empty-profiles.svg" alt=""><h3>No profiles yet</h3><p>Start from a preset or import a FastFlag JSON.</p><div class="btn-row"><button class="btn primary sm">Browse presets</button><button class="btn sm">Import</button></div></div></div>
+      <div class="card"><div class="state"><img src="../web/assets/illus/empty-search.svg" alt=""><h3>Nothing matches “sky”</h3><p>Try a flag name or clear the filters.</p><div class="btn-row"><button class="btn sm">Clear filters</button></div></div></div>
+      <div class="card"><div class="state err"><img src="../web/assets/illus/error-target.svg" alt=""><h3>Fishstrap's file can't be read</h3><p>It isn't valid JSON (line 4). Firetier won't overwrite it until you choose to.</p><div class="btn-row"><button class="btn sm">Open folder</button><button class="btn danger sm">Restore a backup</button></div></div></div>
+    </div></section>
+</div>
+<div class="toasts" aria-live="polite"></div>
+<script>
+// Generate the forced-state classes (.is-hover/.is-focus/.is-active) from the real CSS rules.
+(function () {
+  const map = [[":hover", ".is-hover"], [":focus-visible", ".is-focus"], [":focus", ".is-focus"], [":active", ".is-active"]];
+  const out = [];
+  for (const sheet of document.styleSheets) {
+    let rules; try { rules = sheet.cssRules; } catch (e) { continue; }
+    for (const r of rules) {
+      if (!r.selectorText) continue;
+      let sel = r.selectorText, hit = false;
+      for (const [a, b] of map) if (sel.includes(a)) { sel = sel.split(a).join(b); hit = true; }
+      if (hit && !/::-webkit/.test(sel)) out.push(sel + "{" + r.style.cssText + "}");
+      else if (hit) out.push(sel + "{" + r.style.cssText + "}");
+    }
+  }
+  const st = document.createElement("style"); st.textContent = out.join("\n"); document.head.appendChild(st);
+})();
+const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+function lum(hex){const c=hex.replace("#","").match(/../g).map(x=>{x=parseInt(x,16)/255;return x<=.03928?x/12.92:Math.pow((x+.055)/1.055,2.4)});return .2126*c[0]+.7152*c[1]+.0722*c[2]}
+function ratio(a,b){const x=lum(a),y=lum(b);return ((Math.max(x,y)+.05)/(Math.min(x,y)+.05)).toFixed(1)}
+function sw(id, list, fgCheck){document.getElementById(id).innerHTML=list.map(([n,label])=>{const v=css(n);const r=fgCheck?` · ${ratio(v,css("--s1"))}:1`:"";return `<div class="sw"><i style="background:${v}"></i><div>${label}<br><code>${n} ${v}${r}</code></div></div>`}).join("")}
+sw("sw-surface",[["--bg","Background"],["--s1","Surface 1"],["--s2","Surface 2"],["--s3","Surface 3"],["--line-strong","Line strong"]]);
+sw("sw-text",[["--tx","Text"],["--tx2","Text 2"],["--tx3","Text 3"],["--ac","Accent"],["--amber","Amber"]],true);
+sw("sw-status",[["--ok","OK"],["--warn","Warning"],["--err","Error"],["--info","Info"],["--tx-dis","Disabled"]],true);
+const I = id => `<svg class="ic sm"><use href="../web/assets/icons.svg#${id}"/></svg>`;
+const kinds=[["primary","Primary",I("i-bolt")+"Apply"],["","Secondary",I("i-import")+"Import"],["ghost","Ghost",I("i-refresh")+"Refresh"],["danger","Danger",I("i-trash")+"Delete"],["icon","Icon",I("i-more")]];
+let h='<span></span><span class="h">Default</span><span class="h">Hover</span><span class="h">Focus</span><span class="h">Pressed</span><span class="h">Disabled</span>';
+for(const [k,l,c] of kinds){h+=`<span class="rl">${l}</span>`;for(const s of ["","is-hover","is-focus","is-active","dis"]){h+=`<div><button class="btn ${k} ${s==="dis"?"":s}" ${s==="dis"?"disabled":""} ${k==="icon"?'aria-label="More"':""}>${c}</button></div>`}}
+document.getElementById("btn-states").innerHTML=h;
+const cardBody = t => `<div class="card-hd"><span class="badge ac">${I("i-flame")}Rivals</span></div><h3>${t}</h3><p class="muted" style="font-size:13px;margin-top:6px">12 flags · 12 honored</p>`;
+document.getElementById("card-states").innerHTML=[["","Default"],["is-hover","Hover"],["is-focus","Focus"],["selected","Selected"]].map(([c,t])=>`<div class="card interactive ${c}" tabindex="0">${cardBody(t)}</div>`).join("");
+</script>
+</body></html>

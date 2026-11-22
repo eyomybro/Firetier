@@ -1,0 +1,30 @@
+{
+  "30_imports_10000_asset_rows_each_including_reload_s": 4.408,
+  "18_MiB_valid_unrecognized_json_ms": 73,
+  "8192x8192_png": "rejected by JSON importer; no image decoder in app",
+  "over_20_MiB": "rejected",
+  "windows_job_memory_test": {
+    "limit_bytes": 25579520,
+    "result": "out-of-memory"
+  },
+  "240_warm_preview_switches_ms": {
+    "median": 51.83,
+    "p95": 64.03,
+    "max": 143.62
+  },
+  "working_set_MiB_at_0_60_120_180_240": [
+    81.77,
+    81.98,
+    81.98,
+    81.98,
+    81.98
+  ],
+  "tk_image_counts": [
+    8,
+    8,
+    8,
+    8,
+    8
+  ],
+  "event_loop_ticks_during_450ms_diagnostic": 46
+}

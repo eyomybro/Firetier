@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Concept B · Workstation</title>
+<style>
+:root{--bg:#18191C;--p:#1F2024;--p2:#26282D;--hd:#1B1C20;--line:#2F3137;--tx:#E6E7EA;--tx2:#A0A4AC;--tx3:#6C7079;--ac:#4C8DFF;--acs:rgba(76,141,255,.16);--ok:#43C984;--warn:#E8B14B;--err:#EE5D5D}
+*{box-sizing:border-box;margin:0}
+body{background:#111214;color:var(--tx);font:13px/1.4 "Segoe UI Variable Text","Segoe UI",sans-serif}
+svg.ic{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.app{width:1440px;height:900px;background:var(--bg);display:grid;grid-template-rows:34px 1fr 24px;overflow:hidden}
+.menubar{display:flex;align-items:center;gap:18px;padding:0 12px;background:var(--hd);border-bottom:1px solid var(--line);color:var(--tx2)}
+.menubar img{width:18px;height:18px;border-radius:4px}
+.menubar .sp{margin-left:auto;display:flex;gap:6px;align-items:center}
+.wrap{display:grid;grid-template-columns:52px 260px 1fr 300px;min-height:0}
+.rail{background:var(--hd);border-right:1px solid var(--line);display:flex;flex-direction:column;align-items:center;padding-top:8px;gap:4px}
+.rail div{width:36px;height:36px;border-radius:6px;display:grid;place-items:center;color:var(--tx3)}
+.rail .on{background:var(--acs);color:var(--ac)}
+.rail svg.ic{width:18px;height:18px}
+.dock{background:var(--p);border-right:1px solid var(--line);display:flex;flex-direction:column;min-height:0}
+.tabs{display:flex;height:32px;background:var(--hd);border-bottom:1px solid var(--line)}
+.tabs span{padding:0 14px;display:flex;align-items:center;color:var(--tx3);border-right:1px solid var(--line);font-size:12px}
+.tabs .on{color:var(--tx);background:var(--p);box-shadow:inset 0 2px 0 var(--ac)}
+.tree{padding:8px}
+.tree div{height:26px;display:flex;align-items:center;gap:8px;padding:0 8px;border-radius:4px;color:var(--tx2)}
+.tree .g{color:var(--tx3);font-size:11px;text-transform:uppercase;letter-spacing:.5px;margin-top:8px}
+.tree .on{background:var(--acs);color:var(--tx)}
+.center{display:flex;flex-direction:column;min-width:0}
+.view{flex:1;margin:12px;border:1px solid var(--line);border-radius:6px;position:relative;overflow:hidden;background:url(../../web/assets/arena-1280.jpg) center/cover}
+.view .half{position:absolute;inset:0 0 0 50%;background:#8E9298;filter:none;border-left:2px solid var(--ac)}
+.view .half::after{content:"";position:absolute;inset:0;background:linear-gradient(#9DA1A6 0 38%,#7B7F85 38% 100%)}
+.view .knob{position:absolute;left:50%;top:50%;width:28px;height:28px;margin:-14px;border-radius:50%;background:var(--ac);display:grid;place-items:center;color:#fff;z-index:2}
+.view .lbl{position:absolute;top:10px;padding:3px 8px;border-radius:4px;background:rgba(0,0,0,.55);font-size:11px;z-index:2}
+.toolbar{display:flex;gap:6px;padding:8px 12px 0}
+.tb{height:28px;padding:0 10px;border-radius:5px;border:1px solid var(--line);background:var(--p2);display:flex;gap:6px;align-items:center;color:var(--tx2)}
+.tb.p{background:var(--ac);color:#fff;border-color:transparent}
+.bottom{height:210px;margin:0 12px 12px;border:1px solid var(--line);border-radius:6px;background:var(--p);overflow:hidden}
+table{width:100%;border-collapse:collapse;font-size:12px}
+th{text-align:left;color:var(--tx3);font-weight:600;padding:6px 10px;border-bottom:1px solid var(--line);background:var(--hd)}
+td{padding:6px 10px;border-bottom:1px solid var(--line);color:var(--tx2)} td:first-child{font-family:Consolas;color:var(--tx)}
+.insp{background:var(--p);border-left:1px solid var(--line);overflow:hidden}
+.grp{padding:12px;border-bottom:1px solid var(--line)}
+.grp h5{font-size:11px;text-transform:uppercase;letter-spacing:.5px;color:var(--tx3);margin-bottom:10px}
+.prop .f{min-width:0;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;display:block;line-height:24px}
+.prop{display:grid;grid-template-columns:72px minmax(0,1fr);align-items:center;gap:8px;margin-bottom:8px;color:var(--tx2)}
+.f{height:26px;border:1px solid var(--line);border-radius:4px;background:var(--bg);padding:0 8px;display:flex;align-items:center;color:var(--tx)}
+.chip{display:inline-flex;height:20px;align-items:center;padding:0 6px;border-radius:4px;font-size:11px;font-weight:600}
+.ok{background:rgba(67,201,132,.14);color:var(--ok)}.wn{background:rgba(232,177,75,.14);color:var(--warn)}
+.status{display:flex;align-items:center;gap:16px;padding:0 12px;background:var(--ac);color:#fff;font-size:12px}
+.spec{width:1440px;padding:36px 48px;display:grid;grid-template-columns:1fr 1fr 1.2fr;gap:36px;background:#111214;border-top:1px solid var(--line)}
+.spec h4{font-size:11px;letter-spacing:.8px;text-transform:uppercase;color:var(--tx3);margin-bottom:12px}
+.sw{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}.sw div{height:52px;border-radius:4px;border:1px solid var(--line);font:10px Consolas;padding:5px;display:flex;align-items:flex-end}
+.ty div{margin-bottom:9px}
+</style></head><body>
+<div class="app">
+  <div class="menubar"><img src="../../web/assets/logo-64.png" alt=""><b style="color:var(--tx)">Firetier</b><span>File</span><span>Edit</span><span>Profile</span><span>View</span><span>Help</span>
+    <span class="sp"><span class="tb"><svg class="ic"><use href="../../web/assets/icons.svg#i-undo"/></svg></span><span class="tb"><svg class="ic"><use href="../../web/assets/icons.svg#i-redo"/></svg></span><span class="tb p"><svg class="ic"><use href="../../web/assets/icons.svg#i-bolt"/></svg>Apply to Fishstrap</span></span></div>
+  <div class="wrap">
+    <div class="rail"><div><svg class="ic"><use href="../../web/assets/icons.svg#i-home"/></svg></div><div><svg class="ic"><use href="../../web/assets/icons.svg#i-games"/></svg></div><div><svg class="ic"><use href="../../web/assets/icons.svg#i-presets"/></svg></div><div class="on"><svg class="ic"><use href="../../web/assets/icons.svg#i-editor"/></svg></div><div><svg class="ic"><use href="../../web/assets/icons.svg#i-assets"/></svg></div><div><svg class="ic"><use href="../../web/assets/icons.svg#i-diagnostics"/></svg></div><div style="margin-top:auto;margin-bottom:8px"><svg class="ic"><use href="../../web/assets/icons.svg#i-settings"/></svg></div></div>
+    <div class="dock"><div class="tabs"><span class="on">Profiles</span><span>Assets</span></div>
+      <div class="tree"><div class="g">Built-in</div><div class="on"><svg class="ic"><use href="../../web/assets/icons.svg#i-flame"/></svg>Rivals: No Textures</div><div><svg class="ic"><use href="../../web/assets/icons.svg#i-bolt"/></svg>Rivals: Max FPS</div><div><svg class="ic"><use href="../../web/assets/icons.svg#i-sliders-h"/></svg>Balanced low detail</div><div><svg class="ic"><use href="../../web/assets/icons.svg#i-cpu"/></svg>Renderer: Vulkan</div>
+      <div class="g">Mine</div><div><svg class="ic"><use href="../../web/assets/icons.svg#i-file"/></svg>My Fishstrap flags (Vulkan)</div><div class="g">Unsupported</div><div style="color:var(--tx3)"><svg class="ic"><use href="../../web/assets/icons.svg#i-lock"/></svg>Fleasion import</div></div></div>
+    <div class="center"><div class="toolbar"><span class="tb"><svg class="ic"><use href="../../web/assets/icons.svg#i-compare"/></svg>Split</span><span class="tb">Side by side</span><span class="tb">Default</span><span class="tb" style="margin-left:auto">Offline approximation</span></div>
+      <div class="view"><div class="half"></div><span class="lbl" style="left:10px">Default</span><span class="lbl" style="right:10px">Profile</span><span class="knob"><svg class="ic"><use href="../../web/assets/icons.svg#i-compare"/></svg></span></div>
+      <div class="bottom"><table><tr><th>Flag</th><th>Value</th><th>Status</th><th>Group</th></tr>
+        <tr><td>DFIntTextureQualityOverride</td><td>0</td><td><span class="chip ok">active</span></td><td>Rendering</td></tr>
+        <tr><td>DFFlagTextureQualityOverrideEnabled</td><td>True</td><td><span class="chip ok">active</span></td><td>Rendering</td></tr>
+        <tr><td>FFlagDebugSkyGray</td><td>True</td><td><span class="chip ok">active</span></td><td>Rendering</td></tr>
+        <tr><td>DFIntTaskSchedulerTargetFps</td><td>9999</td><td><span class="chip wn">ignored</span></td><td>—</td></tr>
+        <tr><td>FIntFRMMaxGrassDistance</td><td>0</td><td><span class="chip ok">active</span></td><td>Rendering</td></tr></table></div></div>
+    <div class="insp"><div class="tabs"><span class="on">Properties</span><span>Status</span></div>
+      <div class="grp"><h5>Flag</h5><div class="prop">Name<span class="f">DFIntTextureQualityOverride</span></div><div class="prop">Value<span class="f">0</span></div><div class="prop">Enabled<span class="f">Yes</span></div></div>
+      <div class="grp"><h5>Profile</h5><div class="prop">Name<span class="f">Rivals: No Textures</span></div><div class="prop">Game<span class="f">Rivals</span></div><div class="prop">Honored<span class="f">12 of 12</span></div></div>
+      <div class="grp"><h5>Target</h5><div class="prop">File<span class="f">Fishstrap FastFlags</span></div><div class="prop">On disk<span class="f">15 flags</span></div></div></div>
+  </div>
+  <div class="status"><span>● Fishstrap · writable</span><span>12 honored · 0 ignored</span><span style="margin-left:auto">In-game effect not verified</span></div>
+</div>
+<section class="spec">
+  <div><h4>Palette</h4><div class="sw"><div style="background:#18191C">bg</div><div style="background:#1F2024">panel</div><div style="background:#26282D">panel2</div><div style="background:#2F3137">line</div><div style="background:#4C8DFF">accent</div><div style="background:#43C984;color:#000">ok</div><div style="background:#E8B14B;color:#000">warn</div><div style="background:#EE5D5D">error</div></div></div>
+  <div class="ty"><h4>Typography · Segoe UI Variable, dense</h4><div style="font:600 18px 'Segoe UI Variable Display'">Panel title 18</div><div style="font:600 13px 'Segoe UI'">Section 13</div><div>Body 13 — compact tool density</div><div style="font:12px Consolas">Mono 12 — DFIntTextureQualityOverride</div></div>
+  <div><h4>Components</h4><div style="display:flex;gap:6px;margin-bottom:10px"><span class="tb p">Primary</span><span class="tb">Secondary</span><span class="tb" style="opacity:.4">Disabled</span></div><div class="prop" style="width:320px">Field<span class="f" style="border-color:var(--ac);box-shadow:0 0 0 2px var(--acs)">Focused</span></div><div style="display:flex;gap:6px"><span class="chip ok">active</span><span class="chip wn">ignored</span></div></div>
+</section>
+</body></html>

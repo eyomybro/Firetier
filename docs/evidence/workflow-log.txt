@@ -1,0 +1,9 @@
+2026-11-21 19:05:34  Created profile 'Audit draft'.
+2026-11-21 19:05:34  Imported import.json as 'import' (fastflag-json).
+2026-11-21 19:05:36  Saved 'import'.
+2026-11-21 19:05:36  Wrote 12 flag(s) to C:\Users\PC\AppData\Local\Temp\firetier-audit-1121\final-workflow\installation\Roblox\Versions\version-fixture\ClientSettings\ClientAppSettings.json and read the file back to verify it.
+2026-11-21 19:05:39  Exported 'import' to C:\Users\PC\AppData\Local\Temp\firetier-audit-1121\final-workflow\export.json.
+2026-11-21 19:05:39  Restored C:\Users\PC\AppData\Local\Temp\firetier-audit-1121\final-workflow\installation\Roblox\Versions\version-fixture\ClientSettings\ClientAppSettings.json from backup 20261121-190536-199f52. Verified (SHA-256 matches).
+2026-11-21 19:05:39  Diagnostics: 3 ok, 2 warning(s), 0 problem(s).
+2026-11-21 19:05:39  Restored Firetier preferences to defaults.
+2026-11-21 19:05:39  Moved 'import' to C:\Users\PC\AppData\Local\Temp\firetier-audit-1121\final-workflow\home\trash\0e735453d1a3-3d61a067636b4f81b0f9fe9e9f5e1964.json.
